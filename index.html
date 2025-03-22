@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Développeur.Net - Création de sites professionnels</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1a1a2e;
+            color: white;
+            text-align: center; 
+        }
+        .header {
+            background: linear-gradient(135deg, #365e4b, #323436);
+            padding: 80px 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .cta-btn {
+            background: #ff5733;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 30px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(255,87,51,0.5);
+        }
+        .cta-btn:hover {
+            background: #c70039;
+        }
+        section {
+            padding: 50px 20px;
+            background: #16213e;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        form input, form textarea {
+            background: #1b1b3a;
+            color: white;
+            border: 1px solid #ff5733;
+        }
+        form button {
+            background: #ff5733;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        form button:hover {
+            background: #c70039;
+        }
+        .success-message {
+            display: none;
+            color: #00ff00;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        footer {
+            background: #0f3460;
+            color: white;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            let form = event.target;
+            let formData = new FormData(form);
+            
+            fetch("https://formspree.io/f/movevdzw", {
+                method: "POST",
+                body: formData,
+                headers: { "Accept": "application/json" }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById("success-message").style.display = "block";
+                    form.reset();
+                } else {
+                    alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+                }
+            }).catch(error => {
+                alert("Une erreur est survenue. Veuillez vérifier votre connexion internet.");
+            });
+        }
+    </script>
+    <meta name="google-site-verification" content="AZYq09jzaq-wuImilSJjhhIoywnaZpd6Ox7wcexQw5I" />
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Création de sites web modernes et efficaces</h1>
+            <p class="subtitle">Boostez votre présence en ligne avec un site professionnel</p>
+            <a href="#contact" class="cta-btn">Obtenez votre site maintenant</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>Qui suis-je ?</h2>
+        <p>Développeur passionné, spécialisé en HTML et CSS, j’aide les entrepreneurs, freelances et petites entreprises à créer des sites modernes et performants.</p>
+    </section>
+
+    <section>
+        <h2>Mes services</h2>
+        <ul>
+            <li><strong>Site vitrine</strong> - Présentez votre activité en ligne (à partir de 20€)</li>
+            <li><strong>Landing page</strong> - Une page unique optimisée pour attirer des clients (à partir de 15€)</li>
+            <li><strong>Amélioration de site existant</strong> - Refonte et optimisation de votre site web</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contactez-moi</h2>
+        <p>Besoin d’un site web ? Remplissez le formulaire ci-dessous et je vous répondrai rapidement.</p>
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" placeholder="Votre demande" rows="4" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+        <p id="success-message" class="success-message">Votre message a bien été envoyé. On vous répondra aussi vite que possible. Merci d’avoir choisi Développeur.Net.</p>
+    </section>
+
+    <footer>
+        <p>Contact direct : <a href="mailto:ryadhabd69@gmail.com">ryadhabd69@gmail.com</a></p>
+    </footer>
+</body>
+</html>
