@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliona - Salon de Beauté & Coiffure</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 1s, transform 1s; }
+        .fade-in.show { opacity: 1; transform: translateY(0); }
+        .gold { color: #D4AF37; }
+        .bg-gold { background-color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        .bg-image {
+            background: url('img2.png') center/cover no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            z-index: -1;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let elements = document.querySelectorAll(".fade-in");
+            elements.forEach(el => {
+                setTimeout(() => el.classList.add("show"), 300);
+            });
+        });
+    </script>
+</head>
+<body class="bg-beige-100 text-gray-900">
+    
+    <!-- Accueil -->
+    <section class="relative h-screen flex items-center justify-center bg-cover bg-center px-6 fade-in">
+        <div class="bg-image"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="relative text-center text-white max-w-2xl">
+            <h1 class="text-6xl font-extrabold mb-4 gold">Bienvenue chez Aliona</h1>
+            <p class="text-xl mb-6 text-beige-300">L'élégance et le soin au service de votre beauté</p>
+            <div class="flex justify-center">
+                <a href="https://www.planity.com/aliona-salon-de-beaute-coiffure-69006-lyon" target="_blank" class="relative block w-64 h-20 rounded-lg shadow-lg transition-all hover:opacity-80 bg-card flex items-center justify-center">
+                    <span class="text-white text-3xl font-bold bg-black bg-opacity-50 px-6 py-3 rounded-lg">Prendre Rendez-vous</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- À propos -->
+    <section class="container mx-auto my-24 px-6 text-center fade-in">
+        <h2 class="text-5xl font-bold gold mb-8">À propos</h2>
+        <p class="text-lg text-gray-700 max-w-3xl mx-auto">Chez Aliona, nous mettons notre expertise et notre passion au service de votre bien-être. Notre équipe qualifiée vous accompagne pour révéler votre beauté naturelle.</p>
+    </section>
+    
+    <!-- Services -->
+    <section class="bg-white py-24 fade-in">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold gold mb-12">Nos Services</h2>
+            <div class="grid grid-cols-1 md-grid-cols-3 gap-12">
+                <div class="p-8 bg-beige-200 shadow-lg rounded-xl transform hover:scale-105 transition border-gold border-2">
+                    <h3 class="text-2xl font-semibold mb-3 gold">✂️ Coupe & Coiffage</h3>
+                    <p class="text-gray-600">Des coupes modernes adaptées à votre style.</p>
+                </div>
+                <div class="p-8 bg-beige-200 shadow-lg rounded-xl transform hover:scale-105 transition border-gold border-2">
+                    <h3 class="text-2xl font-semibold mb-3 gold">🎨 Coloration</h3>
+                    <p class="text-gray-600">Des teintes éclatantes et naturelles.</p>
+                </div>
+                <div class="p-8 bg-beige-200 shadow-lg rounded-xl transform hover:scale-105 transition border-gold border-2">
+                    <h3 class="text-2xl font-semibold mb-3 gold">💆 Soins Capillaires</h3>
+                    <p class="text-gray-600">Des soins nourrissants pour sublimer vos cheveux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="container mx-auto my-24 px-6 text-center fade-in">
+        <h2 class="text-5xl font-bold gold mb-8">Contactez-nous</h2>
+        <p class="text-lg text-gray-700">Pour toute question ou réservation, contactez-nous :</p>
+        <p class="text-lg text-gray-700 font-bold">📞 04 78 24 35 12</p>
+        <p class="text-lg text-gray-700 font-bold">📍 12 Rue du Salon, 69006 Lyon</p>
+    </section>
+    
+    <!-- Horaires -->
+    <section class="bg-white py-12 fade-in text-center">
+        <h2 class="text-5xl font-bold gold mb-8">Horaires d'ouverture</h2>
+        <p class="text-lg text-gray-700">🕘 Lundi - Vendredi : 9h00 - 19h00</p>
+        <p class="text-lg text-gray-700">🕘 Samedi : 9h00 - 17h00</p>
+        <p class="text-lg text-gray-700">❌ Dimanche : Fermé</p>
+    </section>
+    
+</body>
+</html>
 
